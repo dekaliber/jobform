@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width">
+	<title>Job Application Form Demo by Tai Zhang, dekaliber.net</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div id="formcontainer">
+	<header>
+		<label>Application for</label>
+		<div class="title"><span class="position">UX Designer</span> | <span class="company">The Creative Co.</span></div>
+		<div class="location">Los Angeles, CA</div>
+	</header>
+
+	<section id="intro">
+		<p>Please fill out the following form to get your job application started.</p>
+		<p>To automatically fill in most of this form and share your LinkedIn profile with the The Creative Co., click the button below and log in.</p>
+		<a href="#" id="linkedin-link" class="imglink"><img src="images/linkedin.png"></a>
+	</section>
+
+	<section id="maininfo">
+		<h2>Contact Information</h2>
+		<div class="form-group">
+			<label for="applicant-name">First &amp; Last Name <span class="labelwarning">(required)</span></label>
+			<input class="form-control required" placeholder="" type="text" id="applicant-name">
+		</div>
+
+		<div class="form-group">
+			<label for="applicant-email">E-mail Address <span class="labelwarning">(required)</span></label>
+			<input class="form-control required" placeholder="" type="email" id="applicant-email">
+		</div>
+
+		<div class="form-group">
+			<label for="applicant-phone">Phone number</label>
+			<input class="form-control" placeholder="Your primary number" type="text" id="applicant-phone">
+			<span class="addmore"><a href="#" id="add-phone-link">Add another number</a></span>
+		</div>
+
+		<div class="form-group">
+			<label for="applicant-address">Address</label>
+			<textarea class="form-control" placeholder="Street address" id="applicant-address-street"></textarea>
+			<div class="input-group-wrapper">
+				<input class="form-control extrarow" placeholder="City" type="text" id="applicant-address-city"><input class="form-control extrarow" placeholder="Zip Code" type="text" id="applicant-address-zip">
+			</div>
+		</div>
+
+		<h2 class="attachments">Attachments</h2>
+		<div class="input-group-wrapper">
+			<button class="btn btn-primary btn-sm attachment-upload">Upload Resume</button><button class="btn btn-primary btn-sm attachment-upload">Upload Cover Letter</button>
+		</div>
+		<span class="addmore"><a href="#">Add additional attachments</a></span>
+
+		<!-- <div class="form-group" id="linkedin-group"> -->
+		<div class="input-group-wrapper" id="linkedin-field">
+		<label for="applicant-linkedin">LinkedIn Profile <span class="labellink">(<a href="#">remove</a>)</span></label> 
+	    <div class="input-group">
+	      <div class="input-group-addon">http://</div>
+	      <input class="form-control" placeholder="" type="url" id="applicant-linkedin">
+	    </div>
+    </div>
+	  <!-- </div> -->
+
+		<!-- <div class="form-group"> -->
+		<label for="applicant-link">Portfolio/Website</label>
+		<div class="input-group-wrapper">
+	    <div class="input-group">
+	      <div class="input-group-addon">http://</div>
+	      <input class="form-control" placeholder="" type="url" id="applicant-website">
+	    </div>
+	  </div>
+	  <span class="addmore input-group-hack"><a href="#">Add another link</a></span>
+	  <!-- </div> -->
+	</section>
+
+	<section id="optionalinfo">
+		<h2>Optional Information</h2>
+
+		<label for="applicant-referral">How did you hear about this job?</label>
+		<select class="form-control" id="applicant-referral">
+			<option>-- Select --</option>
+			<option>Friend or colleague</option>
+			<option>Recruiter</option>
+			<option>LinkedIn</option>
+		  <option>Glassdoor</option>
+		  <option>Angelist</option>
+		  <option>ZipRecruiter</option>
+		  <option>Monster</option>
+		</select>
+
+		<!-- <div class="form-group"> -->
+		<div class="input-group-wrapper">
+			<label for="applicant-startdate">When can you start?</label>
+	    <div class="input-group">
+	      <div class="input-group-addon"><span class="glyphicon glyphicon-calendar" style="font-size: 16px; width: 20px;"></span></div>
+	      <input class="form-control" placeholder="Select a date" id="applicant-startdate">
+	    </div>
+	    <div id="datepicker"><img src="images/datepicker.png"></div>
+	  </div>
+		  <!-- </div>	 -->
+
+		<!-- <div class="form-group"> -->
+		
+		<div class="input-group-wrapper">
+			<label for="applicant-salary">If you have a salary range in mind, please let us know</label>
+	    <div class="input-group">
+	      <div class="input-group-addon"><span style="font-size: 16px; padding: 0 5px;">$</span></div>
+	      <input class="form-control" placeholder="e.g. 85-100K" type="text" id="applicant-salary">
+	    </div>
+	  </div>
+	  <!-- </div> -->
+
+	  <p id="eeo">To comply with Equal Employment Opportunity/Affirmative Action reporting regulations, we ask that you share a few additional details about yourself. Completion of the following information is voluntary and will not affect your application in any way.</p>
+
+	  <label for="applicant-gender">Gender</label>
+		<select class="form-control" id="applicant-gender">
+			<option>-- I choose not to disclose --</option>
+			<option>Female</option>
+			<option>Male</option>
+		</select>
+
+		<div class="form-group">
+			<label for="applicant-race">Race <span class="labellink">(<a href="#" id="moreinfo1">more info</a>)</span></label>
+			<select class="form-control" id="applicant-race">
+				<option>-- I choose not to disclose --</option>
+				<option>American Indian or Alaskan Native</option>
+				<option>Asian</option>
+				<option>Black &amp; African American</option>
+				<option>Hawaiian Native or Pacific Islander</option>
+				<option>Hispanic or Latino</option>
+				<option>White (Not of Hispanic Origin)</option>
+				<option>Two or more races</option>
+			</select>
+			<div id="race-moreinfo">
+				<div class="corner"></div>
+				<p><strong>American Indian or Alaskan Native</strong>: Origins in any of the original peoples of North America, and those who maintain cultural identification through tribal affiliation or community recognition.</p>
+				<p><strong>Asian</strong>: Origins among any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent.</p>
+				<p><strong>Black &amp; African american</strong>: Origins in any of the Black racial groups of Africa. This includes Jamaican, Trinidadian, and West Indian.</p>
+				<p><strong>Hawaiian Native or Pacific Islander</strong>: Origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.</p>
+				<p><strong>Hispanic or Latino</strong>: All persons of Mexican, Puerto Rican, Cuban, Central or South American or other Spanish culture/origin.</p>
+				<p><strong>White (Not of Hispanic Origin)</strong>: Origins in any of the original peoples of Europe, North Africa or the Middle East.</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="applicant-veteran">Veteran Status <span class="labellink">(<a href="#" id="moreinfo2">more info</a>)</span></label>
+			<select class="form-control" id="applicant-veteran">
+				<option>-- I choose not to disclose --</option>
+				<option>Disabled Veteran</option>
+				<option>Recently Separated Veteran</option>
+				<option>Armed Forces Service Medal Veteran</option>
+				<option>Other Protected Veteran</option>
+				<option>Not a Veteran</option>
+			</select>
+			<div id="veteran-moreinfo">
+				<div class="corner"></div>
+				<p><strong>Disabled Veteran</strong>: A person who is (a) A Veteran of the US military, ground, naval or air service who is entitled to compensation (or who but for the receipt of military retired pay would be entitled to compensation) under laws administered by the Secretary of Veteran Affairs, or (b) A person who was discharged or released from active duty because of a service connected disability.</p>
+				<p><strong>Recently Separated Veteran</strong>: Any veteran during the three-year period beginning on the date of such Veteran’s discharge or release from active duty in the U.S. military, ground, naval or air service.</p>
+				<p><strong>Armed Forces Service Medal Veteran</strong>: Any Veteran who, while serving on active duty in the US military, ground, naval or air service, participated in a United States military operation for which an Armed Forces service medal was awarded pursuant to Executive Order 12985.</p>
+				<p><strong>Other Protected Veteran</strong>: A Veteran who served on active duty in the US military, ground, naval or air service during a war or in a campaign or expedition for which a campaign badge has been authorized under the laws administered by the Department of Defense.</p>
+			</div>
+		</div>
+
+	</section>
+
+	<section id="submit">
+		<button class="btn btn-success">Submit Your Application</button><p>On the next screen, you’ll have a chance to create a login you can use to check the status of your application.</p>
+	</section>
+	
+	</div>
+
+	<div id="notes">
+		<p id="note1"><span>The title of the page should make clear <strong>the position</strong>, <strong>the company</strong>, and <strong>the location</strong> that the application is for. Anything else is extraneous.</span></p>
+		<p id="note2"><span>When the LinkedIn option exists, it&rsquo;s not always obvious how it&rsquo;s used. Does it replace the resume? Does the link take you to LinkedIn to complete the application? It&rsquo;s worth explaining how this feature complements the form.</span></p>
+		<p id="note3"><span>Breaking names into separate fields is almost always a concession to accommodate lazy software. Allowing entry into one field is a much more human-centered solution, and 99% of the time it parses easily, if necessary.</span></p>
+		<p id="note4"><span>Any required fields that are left empty will be highlighted, eliminating the need to mark them with asterisks.</span></p>
+		<p id="note5"><span>I suspect the distinction between mobile, work, home, etc. that some forms make is no longer meaningful. Companies typically call between 9 and 5, and we can trust people to be smart enough to put the number they&rsquo;re most likely to answer.</span></p>
+		<p id="note6"><span>A multi-line textbox is better way to handle this instead of the usual approach of breaking it into two fields. Putting an apartment number on the same line as the street address has never prevented me from receiving anything in the mail.</span></p>
+		<p id="note7"><span>It&rsquo;s extremely rare that zip codes cross state lines. I think it&rsquo;s fair to say that it will never become an issue for the purpose of job applications.</span></p>
+		<p id="note8"><span>Showing a preview of the first page confirms that the upload succeeded. In some other forms, the resume gets parsed into a separate text field, which always makes me wonder if I need to then format that field (ugh) or if the recruiter will see the attached resume. &ldquo;Additional attachments&rdquo; covers cases where applicants want to add work samples or other documents.</span></p>
+		<!-- <div id="note8fade"></div> -->
+		<p id="note9"><span>The LinkedIn profile link is automatically populated if the &ldquo;apply with linkedin&rdquo; feature is used. Removing it does not erase the data that is imported, but will not include the profile in the application. (This should be uncommon)</span></p>
+		<p id="note10"><span>This is just an image overlay showing what the date picker could look like. I used the excellent example from <a href="http://www.kayak.com/" target="_blank">kayak.com</a></span></p>
+		<p id="note11"><span>I considered using a range widget here, but it seems easier for people to just describe their expectations (or enter something like &ldquo;negotiable&rdquo;)</span></p>
+		<p id="note12"><span>Government legislation requires companies above a certain size to give applicants an opportunity to provide this information.</span></p>
+		<p id="note13"><span>Many other forms include the definitions of these groups inline, but since the majority of people don&rsquo;t need help with this, hiding it in a mouseover container helps reduce noise on the page.</span></p>
+	</div>
+
+	<footer>Tai Zhang <span>//</span> 2014</footer>
+
+<!-- <div id="linkedin-popup">
+	<div>
+		<img name="linkedinpopup_r1_c1" src="linkedin-popup_r1_c1.gif" width="656" height="470" id="linkedinpopup_r1_c1">
+	</div>
+	<div style="display: inline-block; vertical-align: top;">
+		<img name="linkedinpopup_r2_c1" src="linkedin-popup_r2_c1.gif" width="149" height="150" id="linkedinpopup_r2_c1">
+	</div><div style="display:inline-block; vertical-align: top;">
+		<img name="linkedinpopup_r2_c2" src="linkedin-popup_r2_c2.gif" width="108" height="29" id="linkedinpopup_r2_c2"><img name="linkedinpopup_r3_c2" src="linkedin-popup_r3_c2.gif" width="108" height="121" id="linkedinpopup_r3_c2">
+	</div><div style="display: inline-block; vertical-align: top;">
+		<img name="linkedinpopup_r2_c3" src="linkedin-popup_r2_c3.gif" width="12" height="150" id="linkedinpopup_r2_c3">
+	</div><div style="display: inline-block; vertical-align: top;">
+		<img name="linkedinpopup_r2_c4" src="linkedin-popup_r2_c4.gif" width="70" height="29" id="linkedinpopup_r2_c4">
+		<img name="linkedinpopup_r3_c4" src="linkedin-popup_r3_c4.gif" width="70" height="121" id="linkedinpopup_r3_c4">
+	</div><div style="display: inline-block; vertical-align: top;"><img name="linkedinpopup_r2_c5" src="linkedin-popup_r2_c5.gif" width="317" height="150" id="linkedinpopup_r2_c5"></div>
+</div> -->
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/live.js"></script>
+	<script src="js/main.js"></script>
+</body>
