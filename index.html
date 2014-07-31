@@ -23,6 +23,10 @@
 		<p>Please fill out the following form to get your job application started.</p>
 		<p>To automatically fill in most of this form and share your LinkedIn profile with the The Creative Co., click the button below and log in.</p>
 		<a href="#" id="linkedin-link" class="imglink"><img src="images/linkedin.png"></a>
+		<div id="linkedin-tooltip">
+			<div class="corner"></div>
+			Pretend the LinkedIn popup window opened and I entered my login info&hellip; Available information is then populated below.
+		</div>
 	</section>
 
 	<section id="maininfo">
@@ -51,15 +55,53 @@
 			</div>
 		</div>
 
+		<div style="padding-bottom: 7px;">
 		<h2 class="attachments">Attachments</h2>
-		<div class="input-group-wrapper">
-			<button class="btn btn-primary btn-sm attachment-upload">Upload Resume</button><button class="btn btn-primary btn-sm attachment-upload">Upload Cover Letter</button>
+		<div class="input-group-wrapper extrarow">
+			<div class="upload-group">
+				<div class="upload-tooltip">
+					<div class="corner"></div>
+					Pretend a file upload dialog opened and I selected my resume&hellip;
+				</div>
+				<button class="btn btn-primary btn-sm attachment-upload" id="resume-upload">Upload Resume</button>
+				<div class="progress" id="resume-progress">
+				  <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="resume-progress-bar">
+				    <span class="sr-only">0% Complete</span>
+				  </div>
+				</div>
+				<div class="upload-preview">
+					<div id="resume-preview">
+						<img src="images/resume-preview.png" class="previewimg">
+						<span>1/1 pages uploaded</span>
+						<button class="btn btn-default btn-sm" id="resume-remove">Remove</button>
+					</div>
+				</div>
+			</div><div class="upload-group">
+				<div class="upload-tooltip">
+					<div class="corner"></div>
+					Pretend a file upload dialog opened and I selected my cover letter&hellip;
+				</div>
+				<button class="btn btn-primary btn-sm attachment-upload" id="coverletter-upload">Upload Cover Letter</button>
+				<div class="progress" id="coverletter-progress">
+				  <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="coverletter-progress-bar">
+				    <span class="sr-only">0% Complete</span>
+				  </div>
+				</div>
+				<div class="upload-preview">
+					<div id="coverletter-preview">
+						<img src="images/coverletter-preview.png" class="previewimg">
+						<span>1/1 pages uploaded</span>
+						<button class="btn btn-default btn-sm" id="coverletter-remove">Remove</button>
+					</div>
+				</div>
+			</div>
 		</div>
-		<span class="addmore"><a href="#">Add additional attachments</a></span>
+		<span class="addmore input-group-hack attachments-hack"><a href="#" id="add-attachment-link">Add additional attachments</a></span>
+		</div>
 
 		<!-- <div class="form-group" id="linkedin-group"> -->
 		<div class="input-group-wrapper" id="linkedin-field">
-		<label for="applicant-linkedin">LinkedIn Profile <span class="labellink">(<a href="#">remove</a>)</span></label> 
+			<label for="applicant-linkedin">LinkedIn Profile <span class="labellink">(<a href="#" id="linkedin-remove">remove</a>)</span></label> 
 	    <div class="input-group">
 	      <div class="input-group-addon">http://</div>
 	      <input class="form-control" placeholder="" type="url" id="applicant-linkedin">
@@ -68,14 +110,15 @@
 	  <!-- </div> -->
 
 		<!-- <div class="form-group"> -->
-		<label for="applicant-link">Portfolio/Website</label>
-		<div class="input-group-wrapper">
+		
+		<div class="input-group-wrapper" id="website-field">
+			<label for="applicant-link">Portfolio/Website</label>
 	    <div class="input-group">
 	      <div class="input-group-addon">http://</div>
 	      <input class="form-control" placeholder="" type="url" id="applicant-website">
 	    </div>
 	  </div>
-	  <span class="addmore input-group-hack"><a href="#">Add another link</a></span>
+	  <span class="addmore input-group-hack"><a href="#" id="add-link-link">Add another link</a></span>
 	  <!-- </div> -->
 	</section>
 
@@ -176,20 +219,22 @@
 	</div>
 
 	<div id="notes">
-		<p id="note1"><span>The title of the page should make clear <strong>the position</strong>, <strong>the company</strong>, and <strong>the location</strong> that the application is for. Anything else is extraneous.</span></p>
+		<p id="note1"><span>The title of the page should make clear <strong>the position</strong>, <strong>the company</strong>, and <strong>the location</strong> that the application is for. </span></p>
 		<p id="note2"><span>When the LinkedIn option exists, it&rsquo;s not always obvious how it&rsquo;s used. Does it replace the resume? Does the link take you to LinkedIn to complete the application? It&rsquo;s worth explaining how this feature complements the form.</span></p>
 		<p id="note3"><span>Breaking names into separate fields is almost always a concession to accommodate lazy software. Allowing entry into one field is a much more human-centered solution, and 99% of the time it parses easily, if necessary.</span></p>
 		<p id="note4"><span>Any required fields that are left empty will be highlighted, eliminating the need to mark them with asterisks.</span></p>
 		<p id="note5"><span>I suspect the distinction between mobile, work, home, etc. that some forms make is no longer meaningful. Companies typically call between 9 and 5, and we can trust people to be smart enough to put the number they&rsquo;re most likely to answer.</span></p>
 		<p id="note6"><span>A multi-line textbox is better way to handle this instead of the usual approach of breaking it into two fields. Putting an apartment number on the same line as the street address has never prevented me from receiving anything in the mail.</span></p>
 		<p id="note7"><span>It&rsquo;s extremely rare that zip codes cross state lines. I think it&rsquo;s fair to say that it will never become an issue for the purpose of job applications.</span></p>
-		<p id="note8"><span>Showing a preview of the first page confirms that the upload succeeded. In some other forms, the resume gets parsed into a separate text field, which always makes me wonder if I need to then format that field (ugh) or if the recruiter will see the attached resume. &ldquo;Additional attachments&rdquo; covers cases where applicants want to add work samples or other documents.</span></p>
-		<!-- <div id="note8fade"></div> -->
-		<p id="note9"><span>The LinkedIn profile link is automatically populated if the &ldquo;apply with linkedin&rdquo; feature is used. Removing it does not erase the data that is imported, but will not include the profile in the application. (This should be uncommon)</span></p>
-		<p id="note10"><span>This is just an image overlay showing what the date picker could look like. I used the excellent example from <a href="http://www.kayak.com/" target="_blank">kayak.com</a></span></p>
-		<p id="note11"><span>I considered using a range widget here, but it seems easier for people to just describe their expectations (or enter something like &ldquo;negotiable&rdquo;)</span></p>
-		<p id="note12"><span>Government legislation requires companies above a certain size to give applicants an opportunity to provide this information.</span></p>
-		<p id="note13"><span>Many other forms include the definitions of these groups inline, but since the majority of people don&rsquo;t need help with this, hiding it in a mouseover container helps reduce noise on the page.</span></p>
+		<p id="note8"><span>&ldquo;Additional attachments&rdquo; covers cases where applicants want to add work samples or other documents. (Note: the extra buttons don't work in this demo)</span></p>
+		<p id="note9"><span>Showing a preview of the first page confirms that the upload succeeded. In some other forms, the resume gets parsed into a separate text field, which always makes me wonder if I need to then format that field (ugh) or if the recruiter will see the attached resume. A message confirms the number of pages in the attachment.</span></p>
+		<p id="note10"><span>The LinkedIn profile link is automatically populated if the &ldquo;apply with linkedin&rdquo; feature is used. Removing it does not erase the data that is imported, but will not include the profile in the application. (This should be uncommon)</span></p>
+		<p id="note11"><span>This is just a nonfunctional image overlay showing what the date picker could look like. I used the excellent example from <a href="http://www.kayak.com/" target="_blank">kayak.com</a>.</span></p>
+		<p id="note12"><span>I considered using a range widget here, but it seems easier for people to just describe their expectations (or enter something like &ldquo;negotiable&rdquo;).</span></p>
+		<p id="note13"><span>Government legislation requires companies above a certain size to give applicants an opportunity to provide this information.</span></p>
+		<p id="note14"><span>Many other forms include the definitions of these groups inline, but since the majority of people don&rsquo;t need help with this, hiding it in a mouseover container helps reduce noise on the page.</span></p>
+
+		<div class="contact" id="note15"><span>Comments? Suggestions? I&rsquo;d love to <a href="mailto:tai@dekaliber.net">hear what you think</a>.</span></div>
 	</div>
 
 	<footer>Tai Zhang <span>//</span> 2014</footer>

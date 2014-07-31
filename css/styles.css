@@ -56,7 +56,7 @@ html {
   height: 100%; }
 
 body {
-  background: #eeeeee;
+  background: #efefef;
   color: #555;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8em;
@@ -115,7 +115,7 @@ header {
 
 p {
   line-height: 1.5em;
-  margin-bottom: 0.8em;
+  margin-bottom: 10px;
   color: #666; }
 
 p#eeo {
@@ -125,10 +125,11 @@ p#eeo {
 h2 {
   font-size: 1.3em;
   font-weight: 700;
-  margin-bottom: 0.75em; }
+  margin-bottom: 12px; }
 
 h2.attachments {
-  margin-top: 1em; }
+  margin-top: 1em;
+  margin-bottom: 6px; }
 
 label {
   font-size: 1.2em;
@@ -141,11 +142,19 @@ label {
 span.addmore {
   display: inline-block;
   text-align: left;
-  margin-left: 1em; }
+  margin-left: 1em;
+  vertical-align: bottom;
+  margin-bottom: 5px; }
 
 span.input-group-hack {
   position: relative;
-  top: -10px; }
+  top: -6px;
+  margin-bottom: 0px; }
+
+span.attachments-hack {
+  vertical-align: top;
+  margin-top: 6px;
+  top: 8px; }
 
 span.labellink, span.labelwarning {
   font-size: 0.8em;
@@ -163,7 +172,8 @@ section {
   border-top: 1px solid #eee; }
 
 section#intro {
-  border: 0; }
+  border: 0;
+  position: relative; }
 
 section#submit {
   padding-top: 10px;
@@ -180,12 +190,43 @@ section#submit {
     padding-left: 5%; }
 
 .attachment-upload {
+  width: 100%; }
+
+.previewimg {
+  border: 1px solid #ddd;
+  display: block;
+  margin: 0px auto 4px; }
+
+.upload-group {
+  display: inline-block;
+  vertical-align: top;
   width: 49%;
   margin-left: 2%;
-  margin-bottom: 7px; }
+  position: relative; }
 
-.attachment-upload:first-child {
+.upload-group:first-child {
   margin-left: 0; }
+
+.upload-preview {
+  display: none;
+  width: 100%;
+  text-align: center; }
+
+#resume-progress-bar, #coverletter-progress-bar {
+  width: 0%;
+  -webkit-transition: 2s;
+  -moz-transition: 2s;
+  -ms-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s; }
+
+#resume-preview, #coverletter-preview {
+  display: none; }
+  #resume-preview span, #coverletter-preview span {
+    font-size: 0.9em;
+    display: block;
+    padding: 1px 0 5px 0;
+    color: #3c763d; }
 
 footer {
   font-size: 0.9em;
@@ -198,11 +239,11 @@ footer {
 div.input-group-wrapper {
   width: 58%;
   display: inline-block;
-  position: relative; }
+  position: relative;
+  vertical-align: bottom; }
 
 .extrarow {
-  margin-top: 6px;
-  background: blue; }
+  margin-top: 6px; }
 
 #applicant-address-city {
   width: 66%; }
@@ -214,18 +255,8 @@ div.input-group-wrapper {
 #linkedin-field {
   display: none; }
 
-#linkedin-popup {
-  position: absolute;
-  z-index: 50;
-  top: 100px;
-  left: 100px; }
-  #linkedin-popup img {
-    display: block; }
-
 .corner {
   position: absolute;
-  left: -8px;
-  top: 190px;
   width: 15px;
   height: 15px;
   border-left: 1px solid #ddd;
@@ -235,6 +266,53 @@ div.input-group-wrapper {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
+
+#linkedin-tooltip {
+  display: none;
+  position: absolute;
+  top: 65px;
+  left: 205px;
+  width: 265px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 0.9em;
+  color: #999;
+  line-height: 1.4em;
+  padding: 8px 10px 10px 10px;
+  z-index: 2;
+  -webkit-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
+  /* Safari v3.0+ and by Chrome v0.2+ */
+  -moz-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
+  /* FF3.5+ */
+  box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5); }
+  #linkedin-tooltip .corner {
+    left: -8px;
+    top: 25px; }
+
+.upload-tooltip {
+  display: none;
+  position: absolute;
+  top: -82px;
+  left: -15px;
+  width: 165px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 0.9em;
+  color: #999;
+  line-height: 1.4em;
+  padding: 8px 10px 10px 10px;
+  z-index: 2;
+  -webkit-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
+  /* Safari v3.0+ and by Chrome v0.2+ */
+  -moz-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
+  /* FF3.5+ */
+  box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5); }
+  .upload-tooltip .corner {
+    left: 72px;
+    top: 59px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
 
 #race-moreinfo {
   display: none;
@@ -253,6 +331,9 @@ div.input-group-wrapper {
   -moz-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
   /* FF3.5+ */
   box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5); }
+  #race-moreinfo .corner {
+    left: -8px;
+    top: 190px; }
 
 #veteran-moreinfo {
   display: none;
@@ -271,6 +352,9 @@ div.input-group-wrapper {
   -moz-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
   /* FF3.5+ */
   box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5); }
+  #veteran-moreinfo .corner {
+    left: -8px;
+    top: 190px; }
 
 #datepicker {
   display: none;
@@ -278,7 +362,7 @@ div.input-group-wrapper {
   top: 64px;
   border: 1px solid #ddd;
   background: #fff;
-  z-index: 2;
+  z-index: 3;
   -webkit-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
   /* Safari v3.0+ and by Chrome v0.2+ */
   -moz-box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5);
@@ -292,26 +376,27 @@ div#notes {
   position: relative;
   z-index: 1; }
 
-#notes p {
+#notes p, .contact {
   color: #ababab;
   font-size: 0.9em;
   position: absolute;
-  padding-left: 130px;
   margin-left: 8px;
   border-top: 1px solid #ddd;
   width: 600px;
   line-height: 1.4em; }
-  #notes p span {
+  #notes p span, .contact span {
     display: block;
     margin-top: -16px;
     padding-left: 10px;
-    background: #eeeeee; }
+    background: #efefef;
+    width: 80%;
+    float: right; }
 
 p#note1 {
   top: 70px; }
 
 p#note2 {
-  top: 185px; }
+  top: 200px; }
   p#note2 span {
     margin-top: -25px; }
 
@@ -338,28 +423,36 @@ p#note7 {
 
 p#note8 {
   top: 665px; }
-  p#note8 span {
-    margin-top: -40px; }
 
 p#note9 {
-  top: 745px;
+  top: 730px;
   display: none; }
   p#note9 span {
-    margin-top: -25px; }
+    margin-top: -30px; }
 
 p#note10 {
-  top: 915px; }
+  top: 735px;
+  display: none; }
+  p#note10 span {
+    margin-top: -25px; }
 
 p#note11 {
-  top: 1000px; }
+  top: 915px; }
 
 p#note12 {
-  top: 1060px; }
+  top: 1000px; }
 
 p#note13 {
+  top: 1060px; }
+
+p#note14 {
   top: 1220px; }
-  p#note13 span {
+  p#note14 span {
     margin-top: -25px; }
+
+.contact {
+  border: 0;
+  top: 1393px; }
 
 /* BOOTSTRAP OVERRIDES */
 .form-group {
@@ -404,3 +497,10 @@ p#note13 {
 
 .form-control::-webkit-input-placeholder {
   color: #bbb; }
+
+.progress {
+  display: none;
+  height: 15px;
+  margin: 0;
+  position: relative;
+  top: 7px; }
