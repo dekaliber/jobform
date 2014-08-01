@@ -62,19 +62,83 @@ body {
   font-size: 0.8em;
   min-width: 1200px;
   padding-left: 5%;
-  padding-top: 30px;
+  padding-top: 0;
   padding-bottom: 30px; }
+
+header {
+  background: #efefef;
+  min-width: 1200px;
+  width: 100%;
+  padding: 15px 0 15px 0px;
+  position: fixed;
+  z-index: 99;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 16px; }
+  header span {
+    color: #999;
+    line-height: 1.5em; }
+  header p {
+    padding-top: 10px;
+    line-height: 1.5em; }
+  header div {
+    display: inline-block; }
+  header .col-left {
+    width: 530px;
+    padding-left: 30px; }
+  header .col-right {
+    width: 600px;
+    margin-left: 8px;
+    vertical-align: top; }
+    header .col-right span {
+      display: block;
+      padding-left: 10px;
+      width: 80%;
+      float: right; }
+      header .col-right span p {
+        margin-top: 24px;
+        padding: 0; }
+  header a {
+    -webkit-transition: background-color 0.5s, border-color 0.5s, color 0.5s, border-radius 0.25s;
+    -moz-transition: background-color 0.5s, border-color 0.5s, color 0.5s, border-radius 0.25s;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s, border-radius 0.25s; }
+  header a, header a:hover, header a:active, header a:visited {
+    position: relative;
+    color: #65A5D1;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    margin-left: -2px;
+    margin-right: -2px; }
+  header a:hover {
+    background: #b1d1e7;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
+
+h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  color: #60849d; }
 
 div#formcontainer {
   display: inline-block;
   width: 530px;
   padding: 30px;
+  margin-top: 245px;
   background: #fff;
   -webkit-box-shadow: 1px 2px 4px rgba(220, 220, 220, 0.5);
   /* Safari v3.0+ and by Chrome v0.2+ */
   -moz-box-shadow: 1px 2px 4px rgba(220, 220, 220, 0.5);
   /* FF3.5+ */
-  box-shadow: 1px 2px 4px rgba(220, 220, 220, 0.5); }
+  box-shadow: 1px 2px 4px rgba(220, 220, 220, 0.5);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
   div#formcontainer a {
     color: #7baac8;
     text-decoration: none;
@@ -96,22 +160,6 @@ div#formcontainer {
 
 strong {
   font-weight: bold; }
-
-header {
-  font-size: 1.2em; }
-  header label {
-    color: #999;
-    font-size: 1em;
-    margin: 0;
-    margin-bottom: 3px; }
-  header .title {
-    font-size: 1.5em;
-    font-weight: 300;
-    line-height: 1.5em; }
-  header .position {
-    font-weight: 700; }
-  header .location {
-    line-height: 1.5em; }
 
 p {
   line-height: 1.5em;
@@ -170,6 +218,25 @@ section {
   margin-top: 2em;
   padding-top: 0.5em;
   border-top: 1px solid #eee; }
+
+section#header {
+  font-size: 1.2em;
+  border: 0;
+  margin: 0;
+  padding: 0; }
+  section#header label {
+    color: #999;
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 3px; }
+  section#header .title {
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.5em; }
+  section#header .position {
+    font-weight: 700; }
+  section#header .location {
+    line-height: 1.5em; }
 
 section#intro {
   border: 0;
@@ -294,7 +361,7 @@ div.input-group-wrapper {
   position: absolute;
   top: -82px;
   left: -15px;
-  width: 165px;
+  width: 170px;
   border: 1px solid #ddd;
   background: #fff;
   font-size: 0.9em;
@@ -308,7 +375,7 @@ div.input-group-wrapper {
   /* FF3.5+ */
   box-shadow: 2px 2px 1px rgba(220, 220, 220, 0.5); }
   .upload-tooltip .corner {
-    left: 72px;
+    left: 74px;
     top: 59px;
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -373,8 +440,14 @@ div.input-group-wrapper {
 div#notes {
   display: inline-block;
   vertical-align: top;
+  margin-top: 245px;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
 
 #notes p, .contact {
   color: #ababab;
@@ -394,6 +467,8 @@ div#notes {
 
 p#note1 {
   top: 70px; }
+  p#note1 span {
+    margin-top: -25px; }
 
 p#note2 {
   top: 200px; }
@@ -443,16 +518,21 @@ p#note12 {
   top: 1000px; }
 
 p#note13 {
-  top: 1060px; }
+  top: 1070px; }
 
 p#note14 {
   top: 1220px; }
   p#note14 span {
     margin-top: -25px; }
 
+p#note15 {
+  top: 1370px; }
+  p#note15 span {
+    margin-top: -30px; }
+
 .contact {
   border: 0;
-  top: 1393px; }
+  top: 1627px; }
 
 /* BOOTSTRAP OVERRIDES */
 .form-group {

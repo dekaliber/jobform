@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+	$(window).scroll(function(event) {
+		// console.log($(window).scrollTop());
+		if ($(window).scrollTop() > 0) {
+			$('#intro').slideUp(300);
+			$('#formcontainer').css('margin-top','180px');
+			$('#notes').css('margin-top','180px');
+			// $('.col-right span p').css('margin','0');
+		} else {
+			$('#intro').slideDown(300);
+			$('#formcontainer').css('margin-top','245px');
+			$('#notes').css('margin-top','245px');
+			// $('.col-right span p').css('margin-bottom','10px');
+		}
+	});
+
+	var noteTotal = $('#notes').children().length;
+
 	$('#notes p span').hover(function(event) {
 		$(this).parent().animate({borderColor: '#333'}, 300);
 		$(this).animate({color: '#333'}, 300);
@@ -14,7 +31,7 @@ $(document).ready(function() {
 		$(this).children('span').animate({color: '#ababab'}, 300);
 	});
 
-	$('header').hover(function(event) {
+	$('#header').hover(function(event) {
 		$('#note1').animate({borderColor: '#333'}, 300);
 		$('#note1 span').animate({color: '#333'}, 300);
 	}, function(event) {
@@ -32,7 +49,7 @@ $(document).ready(function() {
 
 	$('#linkedin-link').click(function(event) {
 		event.preventDefault();
-		$('#linkedin-tooltip').fadeIn().delay(2000).fadeOut(function(event) {
+		$('#linkedin-tooltip').fadeIn().delay(3000).fadeOut(function(event) {
 			$('#applicant-linkedin').val('www.linkedin.com/in/tairanzhang');
 			$('#applicant-name').val('Tai Zhang');
 			$('#applicant-email').val('tai@dekaliber.net');
@@ -45,10 +62,10 @@ $(document).ready(function() {
 						color: '#333'
 					}, 500);
 				});
-				for (i=11; i<=15; i++) {
+				for (i=11; i<=noteTotal; i++) {
 					var currHeight = $('#note'+i).css('top');
 					currHeight = currHeight.substring(0,currHeight.length-1);
-					var newHeight = parseInt(currHeight)+65;
+					var newHeight = parseInt(currHeight)+63;
 					$('#note'+i).animate({top: newHeight}, 300);
 				}
 			});
@@ -110,7 +127,7 @@ $(document).ready(function() {
 				phoneCountSuffix = 'th'; break;				
 		}
 		$('<input class="form-control extrarow" placeholder="Your '+phoneCount+phoneCountSuffix+' number" type="text" id="applicant-phone'+phoneCount+'">').insertBefore($(this).parent());
-		for (i=6; i<=15; i++) {
+		for (i=6; i<=noteTotal; i++) {
 			var currHeight = $('#note'+i).css('top');
 			currHeight = currHeight.substring(0,currHeight.length-1);
 			var newHeight = parseInt(currHeight)+36;
@@ -126,7 +143,7 @@ $(document).ready(function() {
 		var attachmentRow = Math.ceil(attachmentCount/2);
 		if (attachmentCount%2 == 1) {
 			$('<div class="input-group-wrapper extrarow" id="attachmentrow'+attachmentRow+'"><div class="upload-group"><button class="btn btn-primary btn-sm attachment-upload">Upload Attachment</button></div></div>').insertBefore($(this).parent());	
-			for (i=10; i<=15; i++) {
+			for (i=10; i<=noteTotal; i++) {
 				var currHeight = $('#note'+i).css('top');
 				currHeight = currHeight.substring(0,currHeight.length-1);
 				var newHeight = parseInt(currHeight)+36;
@@ -150,7 +167,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		linkCount += 1;
 		$('<div class="input-group-wrapper extrarow"><div class="input-group"><div class="input-group-addon">http://</div><input class="form-control" placeholder="" type="url" id="applicant-website'+linkCount+'"></div></div>').insertBefore($(this).parent());
-		for (i=10; i<=15; i++) {
+		for (i=10; i<=noteTotal; i++) {
 			var currHeight = $('#note'+i).css('top');
 			currHeight = currHeight.substring(0,currHeight.length-1);
 			var newHeight = parseInt(currHeight)+36;
@@ -202,6 +219,14 @@ $(document).ready(function() {
 	}, function(event) {
 		$('#note13').animate({borderColor: '#ddd'}, 300);
 		$('#note13 span').animate({color: '#ababab'}, 300);
+	});
+
+	$('#submit p').hover(function(event) {
+		$('#note15').animate({borderColor: '#333'}, 300);
+		$('#note15 span').animate({color: '#333'}, 300);
+	}, function(event) {
+		$('#note15').animate({borderColor: '#ddd'}, 300);
+		$('#note15 span').animate({color: '#ababab'}, 300);
 	});
 
 	$('#moreinfo1').click(function(event) {
@@ -274,10 +299,10 @@ $(document).ready(function() {
 				});
 			});
 			if ($('.upload-preview').is(':hidden')) {
-				for (i=10; i<=15; i++) {
+				for (i=10; i<=noteTotal; i++) {
 					var currHeight = $('#note'+i).css('top');
 					currHeight = currHeight.substring(0,currHeight.length-1);
-					var newHeight = parseInt(currHeight)+191;
+					var newHeight = parseInt(currHeight)+192;
 					$('#note'+i).delay(2500).animate({top: newHeight}, 300);
 				}
 			}
@@ -302,10 +327,10 @@ $(document).ready(function() {
 				});
 			});
 			if ($('.upload-preview').is(':hidden')) {
-				for (i=10; i<=15; i++) {
+				for (i=10; i<=noteTotal; i++) {
 					var currHeight = $('#note'+i).css('top');
 					currHeight = currHeight.substring(0,currHeight.length-1);
-					var newHeight = parseInt(currHeight)+191;
+					var newHeight = parseInt(currHeight)+192;
 					$('#note'+i).delay(2500).animate({top: newHeight}, 300);
 				}
 			}
@@ -322,10 +347,10 @@ $(document).ready(function() {
 			$('#note9').fadeOut(300);
 			$('#note9').animate({borderColor: '#ddd'}, 300);
 			$('#note9 span').animate({color: '#ababab'}, 300);
-			for (i=10; i<=15; i++) {
+			for (i=10; i<=noteTotal; i++) {
 				var currHeight = $('#note'+i).css('top');
 				currHeight = currHeight.substring(0,currHeight.length-1);
-				var newHeight = parseInt(currHeight)-191;
+				var newHeight = parseInt(currHeight)-192;
 				$('#note'+i).delay(200).animate({top: newHeight}, 300);
 			}
 		}
@@ -340,10 +365,10 @@ $(document).ready(function() {
 			$('#note9').fadeOut(300);
 			$('#note9').animate({borderColor: '#ddd'}, 300);
 			$('#note9 span').animate({color: '#ababab'}, 300);
-			for (i=10; i<=15; i++) {
+			for (i=10; i<=noteTotal; i++) {
 				var currHeight = $('#note'+i).css('top');
 				currHeight = currHeight.substring(0,currHeight.length-1);
-				var newHeight = parseInt(currHeight)-191;
+				var newHeight = parseInt(currHeight)-192;
 				$('#note'+i).delay(200).animate({top: newHeight}, 300);
 			}
 		}
@@ -356,10 +381,10 @@ $(document).ready(function() {
 			$('#note10').animate({borderColor: '#ddd'}, 300);
 			$('#note10 span').animate({color: '#ababab'}, 300);
 
-			for (i=10; i<=15; i++) {
+			for (i=10; i<=noteTotal; i++) {
 				var currHeight = $('#note'+i).css('top');
 				currHeight = currHeight.substring(0,currHeight.length-1);
-				var newHeight = parseInt(currHeight)-65;
+				var newHeight = parseInt(currHeight)-63;
 				$('#note'+i).animate({top: newHeight}, 300);
 			}
 		});
