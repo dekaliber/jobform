@@ -3,12 +3,12 @@ $(document).ready(function() {
 	$(window).scroll(function(event) {
 		// console.log($(window).scrollTop());
 		if ($(window).scrollTop() > 0) {
-			$('#intro').slideUp(300);
+			$('#desc').slideUp(300);
 			$('#formcontainer').css('margin-top','180px');
 			$('#notes').css('margin-top','180px');
 			// $('.col-right span p').css('margin','0');
 		} else {
-			$('#intro').slideDown(300);
+			$('#desc').slideDown(300);
 			$('#formcontainer').css('margin-top','245px');
 			$('#notes').css('margin-top','245px');
 			// $('.col-right span p').css('margin-bottom','10px');
@@ -126,7 +126,11 @@ $(document).ready(function() {
 			default:
 				phoneCountSuffix = 'th'; break;				
 		}
-		$('<input class="form-control extrarow" placeholder="Your '+phoneCount+phoneCountSuffix+' number" type="text" id="applicant-phone'+phoneCount+'">').insertBefore($(this).parent());
+		$('<input class="form-control extrarow" placeholder="Your '+phoneCount+phoneCountSuffix+' number" type="text" id="applicant-phone'+phoneCount+'" tabindex="'+(phoneCount+2)+'">').insertBefore($(this).parent());
+		$('#applicant-phone'+phoneCount).focus();
+		if (phoneCount >=4 ) {
+			$('#add-phone-link').remove();
+		}
 		for (i=6; i<=noteTotal; i++) {
 			var currHeight = $('#note'+i).css('top');
 			currHeight = currHeight.substring(0,currHeight.length-1);
@@ -166,7 +170,11 @@ $(document).ready(function() {
 	$('#add-link-link').click(function(event) {
 		event.preventDefault();
 		linkCount += 1;
-		$('<div class="input-group-wrapper extrarow"><div class="input-group"><div class="input-group-addon">http://</div><input class="form-control" placeholder="" type="url" id="applicant-website'+linkCount+'"></div></div>').insertBefore($(this).parent());
+		$('<div class="input-group-wrapper extrarow"><div class="input-group"><div class="input-group-addon">http://</div><input class="form-control" placeholder="" type="url" id="applicant-website'+linkCount+'" tabindex="'+(linkCount+11)+'"></div></div>').insertBefore($(this).parent());
+		$('#applicant-website'+linkCount).focus();
+		if (linkCount >=5 ) {
+			$('#add-link-link').remove();
+		}
 		for (i=10; i<=noteTotal; i++) {
 			var currHeight = $('#note'+i).css('top');
 			currHeight = currHeight.substring(0,currHeight.length-1);
@@ -295,6 +303,7 @@ $(document).ready(function() {
 						$('#note9 span').animate({
 							color: '#333'
 						}, 500);
+						$('#coverletter-upload').focus();
 					});
 				});
 			});
@@ -323,6 +332,7 @@ $(document).ready(function() {
 						$('#note9 span').animate({
 							color: '#333'
 						}, 500);
+						$('#applicant-website').focus();
 					});
 				});
 			});

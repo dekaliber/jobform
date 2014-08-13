@@ -16,7 +16,7 @@
 		<div class="col-left">
 			<h1>Job Application Form Demo</h1>
 			<span>Tested on modern browsers (sorry, IE8 &amp; older)</span>
-			<p id="intro">After filling out job applications through a dozen or so different applicant tracking systems (Jobvite, Taleo, BrassRing, etc.), I&rsquo;ve come to the conclusion that not enough thought has been given to the applicant&rsquo;s experience. As this often represents a company&rsquo;s first interaction with potential employees, both parties stand to benefit from a seamless experience. Here are a few ideas for a more thoughtful form.</p>
+			<p id="desc">After filling out job applications through a dozen or so different applicant tracking systems (Jobvite, Taleo, BrassRing, etc.), I&rsquo;ve come to the conclusion that not enough thought has been given to the applicant&rsquo;s experience. As this often represents a company&rsquo;s first interaction with potential employees, both parties stand to benefit from a seamless experience. Here are a few ideas for a more thoughtful form.</p>
 		</div>
 		<div class="col-right">
 			<span><p><a href="/">back to dekaliber.net</a></p></span>
@@ -44,25 +44,25 @@
 		<h2>Contact Information</h2>
 		<div class="form-group">
 			<label for="applicant-name">First &amp; Last Name <span class="labelwarning">(required)</span></label>
-			<input class="form-control required" placeholder="" type="text" id="applicant-name">
+			<input class="form-control required" placeholder="" type="text" id="applicant-name" tabindex="1">
 		</div>
 
 		<div class="form-group">
 			<label for="applicant-email">E-mail Address <span class="labelwarning">(required)</span></label>
-			<input class="form-control required" placeholder="" type="email" id="applicant-email">
+			<input class="form-control required" placeholder="" type="email" id="applicant-email" tabindex="2">
 		</div>
 
 		<div class="form-group">
 			<label for="applicant-phone">Phone number</label>
-			<input class="form-control" placeholder="Your primary number" type="text" id="applicant-phone">
+			<input class="form-control" placeholder="Your primary number" type="text" id="applicant-phone" tabindex="3">
 			<span class="addmore"><a href="#" id="add-phone-link">Add another number</a></span>
 		</div>
 
 		<div class="form-group">
 			<label for="applicant-address">Address</label>
-			<textarea class="form-control" placeholder="Street address" id="applicant-address-street"></textarea>
+			<textarea class="form-control" rows="2" placeholder="Street address" id="applicant-address-street" tabindex="7"></textarea>
 			<div class="input-group-wrapper">
-				<input class="form-control extrarow" placeholder="City" type="text" id="applicant-address-city"><input class="form-control extrarow" placeholder="Zip Code" type="text" id="applicant-address-zip">
+				<input class="form-control extrarow" placeholder="City" type="text" id="applicant-address-city" tabindex="8"><input class="form-control extrarow" placeholder="Zip Code" type="text" id="applicant-address-zip" tabindex="9">
 			</div>
 		</div>
 
@@ -74,7 +74,7 @@
 					<div class="corner"></div>
 					Pretend a file upload dialog opened and I selected my resume&hellip;
 				</div>
-				<button class="btn btn-primary btn-sm attachment-upload" id="resume-upload">Upload Resume</button>
+				<button class="btn btn-primary btn-sm attachment-upload" id="resume-upload" tabindex="10">Upload Resume</button>
 				<div class="progress" id="resume-progress">
 				  <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="resume-progress-bar">
 				    <span class="sr-only">0% Complete</span>
@@ -92,7 +92,7 @@
 					<div class="corner"></div>
 					Pretend a file upload dialog opened and I selected my cover letter&hellip;
 				</div>
-				<button class="btn btn-primary btn-sm attachment-upload" id="coverletter-upload">Upload Cover Letter</button>
+				<button class="btn btn-primary btn-sm attachment-upload" id="coverletter-upload" tabindex="11">Upload Cover Letter</button>
 				<div class="progress" id="coverletter-progress">
 				  <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="coverletter-progress-bar">
 				    <span class="sr-only">0% Complete</span>
@@ -126,7 +126,7 @@
 			<label for="applicant-link">Portfolio/Blog/Twitter etc.</label>
 	    <div class="input-group">
 	      <div class="input-group-addon">http://</div>
-	      <input class="form-control" placeholder="" type="url" id="applicant-website">
+	      <input class="form-control" placeholder="" type="url" id="applicant-website" tabindex="12">
 	    </div>
 	  </div>
 	  <span class="addmore input-group-hack"><a href="#" id="add-link-link">Add another link</a></span>
@@ -137,7 +137,7 @@
 		<h2>Optional Information</h2>
 
 		<label for="applicant-referral">How did you hear about this job?</label>
-		<select class="form-control" id="applicant-referral">
+		<select class="form-control" id="applicant-referral" tabindex="17">
 			<option>-- Select --</option>
 			<option>Friend or colleague</option>
 			<option>Recruiter</option>
@@ -153,7 +153,7 @@
 			<label for="applicant-startdate">When can you start?</label>
 	    <div class="input-group">
 	      <div class="input-group-addon"><span class="glyphicon glyphicon-calendar" style="font-size: 16px; width: 20px;"></span></div>
-	      <input class="form-control" placeholder="Select a date" id="applicant-startdate">
+	      <input class="form-control" placeholder="Select a date" id="applicant-startdate" tabindex="18">
 	    </div>
 	    <div id="datepicker"><img src="images/datepicker.png"></div>
 	  </div>
@@ -165,7 +165,7 @@
 			<label for="applicant-salary">If you have a salary range in mind, please let us know</label>
 	    <div class="input-group">
 	      <div class="input-group-addon"><span style="font-size: 16px; padding: 0 5px;">$</span></div>
-	      <input class="form-control" placeholder="e.g. 85-100K" type="text" id="applicant-salary">
+	      <input class="form-control" placeholder="e.g. 85-100K" type="text" id="applicant-salary" tabindex="19">
 	    </div>
 	  </div>
 	  <!-- </div> -->
@@ -173,7 +173,7 @@
 	  <p id="eeo">To comply with Equal Employment Opportunity/Affirmative Action reporting regulations, we ask that you share a few additional details about yourself. Completion of the following information is voluntary and will not affect your application in any way.</p>
 
 	  <label for="applicant-gender">Gender</label>
-		<select class="form-control" id="applicant-gender">
+		<select class="form-control" id="applicant-gender" tabindex="20">
 			<option>-- I choose not to disclose --</option>
 			<option>Female</option>
 			<option>Male</option>
@@ -181,7 +181,7 @@
 
 		<div class="form-group">
 			<label for="applicant-race">Race <span class="labellink">(<a href="#" id="moreinfo1">more info</a>)</span></label>
-			<select class="form-control" id="applicant-race">
+			<select class="form-control" id="applicant-race" tabindex="21">
 				<option>-- I choose not to disclose --</option>
 				<option>American Indian or Alaskan Native</option>
 				<option>Asian</option>
@@ -204,7 +204,7 @@
 
 		<div class="form-group">
 			<label for="applicant-veteran">Veteran Status <span class="labellink">(<a href="#" id="moreinfo2">more info</a>)</span></label>
-			<select class="form-control" id="applicant-veteran">
+			<select class="form-control" id="applicant-veteran" tabindex="22">
 				<option>-- I choose not to disclose --</option>
 				<option>Disabled Veteran</option>
 				<option>Recently Separated Veteran</option>
@@ -224,7 +224,7 @@
 	</section>
 
 	<section id="submit">
-		<button class="btn btn-success">Submit Your Application</button><p>On the next screen, you’ll have a chance to create a login you can use to check the status of your application.</p>
+		<button class="btn btn-success" tabindex="23">Submit Your Application</button><p>On the next screen, you’ll have a chance to create a login you can use to check the status of your application.</p>
 	</section>
 	
 	</div>
@@ -234,17 +234,17 @@
 		<p id="note2"><span>When the LinkedIn option exists, it&rsquo;s not always obvious how it&rsquo;s used. Does the LinkedIn profile replace the resume? Does the link take you to LinkedIn to complete the application? It&rsquo;s worth explaining how this feature complements the form.</span></p>
 		<p id="note3"><span>Breaking names into separate fields is almost always a concession to accommodate lazy software. Allowing entry into one field is a much more human-centered approach, and 99% of the time it parses easily for back-end systems.</span></p>
 		<p id="note4"><span>Any required fields that are left empty will be highlighted, eliminating the need to mark them with asterisks.</span></p>
-		<p id="note5"><span>I suspect the distinction between mobile, work, home, etc. that some forms make is no longer meaningful. Companies typically call between 9 and 5, and we can trust people to be smart enough to put the number they&rsquo;re most likely to answer.</span></p>
+		<p id="note5"><span>The distinction between mobile, work, and home numbers that some forms make is no longer meaningful &mdash; most people use their mobile phones primarily. That said, it should be possible to provide multiple numbers (up to a reasonable limit).</span></p>
 		<p id="note6"><span>A multi-line textbox is a better way to handle <strong>street address</strong> instead of the usual approach of breaking it into two fields. Putting a unit number on the same line as the street address has never prevented me from receiving anything in the mail.</span></p>
-		<p id="note7"><span><strong>State</strong> is omitted purposefully. Very rarely do zip codes cross state lines, and I think it&rsquo;s fair to say that it will never become an issue for the purpose of job applications.</span></p>
+		<p id="note7"><span><strong>State</strong> can be inferred. Very rarely do zip codes cross state lines, and I think it&rsquo;s fair to say that it will never become an issue for the purpose of job applications.</span></p>
 		<p id="note8"><span>&ldquo;Additional attachments&rdquo; covers cases where applicants want to add work samples or other documents. (<strong>Note:</strong> try uploading a resume and cover letter)</span></p>
 		<p id="note9"><span>Showing a preview of the first page confirms that the upload succeeded. In some other forms, the resume gets parsed into a separate text field, which always makes me wonder if I need to then format that field (ugh) or if the recruiter will see the attached resume. A message confirms the number of pages in the attachment.</span></p>
 		<p id="note10"><span>The LinkedIn profile link is automatically populated if the &ldquo;Apply with LinkedIn&rdquo; feature is used. Removing it does not erase the data that is imported, but will not include the profile in the application. (This should be uncommon)</span></p>
-		<p id="note11"><span>This is just a nonfunctional image overlay showing what the date picker could look like. I used the excellent example from <a href="http://www.kayak.com/" target="_blank">kayak.com</a>, which greys out past dates.</span></p>
+		<p id="note11"><span>This field pops up a nonfunctional image overlay showing what the date picker could look like. I used the excellent example from <a href="http://www.kayak.com/" target="_blank">kayak.com</a>, which greys out past dates.</span></p>
 		<p id="note12"><span>I considered using a range widget here, but opted for a plain ol&rsquo; text field to allow people to describe their expectations or write something like &ldquo;negotiable&rdquo;).</span></p>
 		<p id="note13"><span>Eliminating this clutter would be ideal, but federal legislation requires companies above a certain size to give applicants an opportunity to provide this information.</span></p>
 		<p id="note14"><span>Many other forms include the definitions of these groups inline, but since the majority of people don&rsquo;t need help with this, hiding it in a mouseover container helps reduce noise on the page.</span></p>
-		<p id="note15"><span>Many other forms force you to make a login before you complete the application, which is annoying. Instead, allow candidates to complete the application, then give them an opportunity (or force them, if the system requires it) to create an account on the next screen.</span></p>
+		<p id="note15"><span>Some forms force you to make a login before allowing you to make progress. A better approach would allow candidates to complete the application, then give them an opportunity (or force them, if the system requires it) to create an account on the next screen.</span></p>
 
 		<div class="contact" id="note16"><span>Comments? Suggestions? I&rsquo;d love to <a href="mailto:tai@dekaliber.net">hear what you think</a>.</span></div>
 	</div>
@@ -269,7 +269,7 @@
 
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
-	<!-- <script src="js/live.js"></script> -->
+	<script src="js/live.js"></script>
 	<script src="js/main.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

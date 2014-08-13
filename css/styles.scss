@@ -31,7 +31,7 @@ body {
 	color: #555;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.8em;
-	min-width: 1200px;
+	min-width: 1100px;
 	@include lr_padding;
 }
 header {
@@ -51,14 +51,14 @@ header {
 
 	.col-left { width: 530px; padding-left: 30px; }
 	.col-right { 
-		width: 600px;
+		width: 550px;
 		margin-left: 8px;
 		vertical-align: top;
 		
 		span {
 			display: block;
 			padding-left: 10px;
-			width: 80%;
+			width: 470px;
 			float: right;
 
 			p { 
@@ -308,6 +308,9 @@ div.input-group-wrapper {
 .extrarow {
 	margin-top: 6px;
 }
+#applicant-address-street {
+	height: 3.25em;
+}
 #applicant-address-city {
 	width: 66%;
 }
@@ -443,7 +446,7 @@ div#notes {
 	margin-left: 8px;
 	// margin-right: 5%;
 	border-top: 1px solid #ddd;
-	width: 600px;
+	width: 550px;
 	line-height: 1.4em;
 
 	span {
@@ -451,7 +454,7 @@ div#notes {
 		margin-top: -16px;
 		padding-left: 10px;
 		background: $bgcolor;
-		width: 80%;
+		width: 470px;
 		float: right;
 	}
 }
@@ -465,10 +468,10 @@ p#note7 { top: 595px; }
 p#note8 { top: 665px; }
 p#note9 { top: 730px; display: none; span { margin-top: -30px; } }
 p#note10 { top: 735px; display: none; span { margin-top: -25px; } }
-p#note11 { top: 915px; }
+p#note11 { top: 915px; span { margin-top: -25px; } }
 p#note12 { top: 1000px; }
 p#note13 { top: 1070px; }
-p#note14 { top: 1220px; span { margin-top: -25px; } }
+p#note14 { top: 1225px; span { margin-top: -25px; } }
 p#note15 { top: 1370px; span { margin-top: -30px; } }
 
 .contact {

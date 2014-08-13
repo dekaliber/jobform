@@ -60,7 +60,7 @@ body {
   color: #555;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8em;
-  min-width: 1200px;
+  min-width: 1100px;
   padding-left: 5%;
   padding-top: 0;
   padding-bottom: 30px; }
@@ -86,13 +86,13 @@ header {
     width: 530px;
     padding-left: 30px; }
   header .col-right {
-    width: 600px;
+    width: 550px;
     margin-left: 8px;
     vertical-align: top; }
     header .col-right span {
       display: block;
       padding-left: 10px;
-      width: 80%;
+      width: 470px;
       float: right; }
       header .col-right span p {
         margin-top: 24px;
@@ -312,6 +312,9 @@ div.input-group-wrapper {
 .extrarow {
   margin-top: 6px; }
 
+#applicant-address-street {
+  height: 3.25em; }
+
 #applicant-address-city {
   width: 66%; }
 
@@ -455,14 +458,14 @@ div#notes {
   position: absolute;
   margin-left: 8px;
   border-top: 1px solid #ddd;
-  width: 600px;
+  width: 550px;
   line-height: 1.4em; }
   #notes p span, .contact span {
     display: block;
     margin-top: -16px;
     padding-left: 10px;
     background: #efefef;
-    width: 80%;
+    width: 470px;
     float: right; }
 
 p#note1 {
@@ -513,6 +516,8 @@ p#note10 {
 
 p#note11 {
   top: 915px; }
+  p#note11 span {
+    margin-top: -25px; }
 
 p#note12 {
   top: 1000px; }
@@ -521,7 +526,7 @@ p#note13 {
   top: 1070px; }
 
 p#note14 {
-  top: 1220px; }
+  top: 1225px; }
   p#note14 span {
     margin-top: -25px; }
 
